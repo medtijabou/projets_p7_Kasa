@@ -1,6 +1,13 @@
 /* Variables */
+$max-width: 1440px;
+$font-family: "Work Sans", sans-serif;
+$font-size: 14px;
+$banner-image: 'src/assets/images/plage.png';
+$primary-color: #ff6060;
+$text-color: black;
+$text-hover-color: $primary-color;
+
 /* Reset CSS */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
 *,
 *::before,
 *::after {
@@ -27,11 +34,14 @@ section {
   display: block;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
 a {
-  color: black;
-}
-a:hover {
-  color: #ff6060;
+  color: $text-color;
+
+  &:hover {
+    color: $text-hover-color;
+  }
 }
 
 ol,
@@ -58,13 +68,13 @@ table {
 
 /* Body custom styles */
 body {
-  max-width: 1440px;
+  max-width: $max-width;
   margin: auto;
-  font-family: "Work Sans", sans-serif;
-  font-size: 14px;
-  font-family: "Montserrat", sans-serif;
-  display: flex;
-  justify-content: center;
+  font-family: $font-family;
+  font-size: $font-size;
+  font-family: 'Montserrat', sans-serif;
+display: flex;
+justify-content: center;
 }
 
 /* Navbar */
@@ -107,16 +117,16 @@ a img {
 }
 
 .banner__title::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url(src/assets/images/plage.png);
+  background-image: url(#{$banner-image});
   background-size: cover;
   background-position: center;
   filter: brightness(50%);
   z-index: -1;
   border-radius: 25px;
-}/*# sourceMappingURL=App.css.map */
+}
